@@ -1,0 +1,156 @@
+/* Spider-Man inspired comic theme: night-city navy, suit red and blue, halftone dots, thick ink borders. */
+:root{
+  --night:#080d28;
+  --night-2:#0f1744;
+  --red:#e3142b;
+  --red-dark:#a30b1d;
+  --blue:#1d3fd1;
+  --blue-soft:#d6e2ff;
+  --paper:#fffdf6;
+  --ink:#0a0a14;
+  --mute:#4b5170;
+  --ok:#0e8a35;
+  --ok-bg:#baf5c8;
+  --bad:#b0001a;
+  --bad-bg:#ffc7ce;
+  --gold:#ffd23f;
+  --shadow:6px 6px 0 var(--ink);
+}
+*{box-sizing:border-box}
+html{background:var(--night)}
+body{
+  margin:0;min-height:100vh;color:var(--paper);
+  font:700 17px/1.45 "Comic Neue","Comic Sans MS",system-ui,sans-serif;
+  background:
+    radial-gradient(rgba(255,255,255,.08) 1.4px,transparent 1.6px) 0 0/16px 16px,
+    radial-gradient(120% 70% at 85% -10%,var(--night-2),transparent 70%),
+    var(--night);
+  overflow-x:hidden;
+}
+#web{position:fixed;top:0;left:0;width:min(46vw,420px);height:min(46vw,420px);opacity:.35;pointer-events:none;-webkit-mask-image:radial-gradient(circle at 0 0,#000 45%,transparent 72%);mask-image:radial-gradient(circle at 0 0,#000 45%,transparent 72%)}
+#web path{fill:none;stroke:#fff;stroke-width:1.2}
+.wrap{position:relative;max-width:780px;margin:0 auto;padding:28px 16px 90px}
+
+/* ---------- header ---------- */
+.title{
+  margin:0;font:400 clamp(40px,9vw,68px)/.95 "Bangers",Impact,sans-serif;letter-spacing:.04em;
+  color:var(--paper);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;
+  text-shadow:4px 4px 0 var(--red),7px 7px 0 var(--ink);
+  transform:rotate(-1.5deg);transform-origin:left;
+}
+.sub{margin:16px 0 22px;color:#c5cdf5;font-weight:400}
+
+/* ---------- module chips ---------- */
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.group-label{flex-basis:100%;margin:8px 0 0;font:400 20px "Bangers",sans-serif;letter-spacing:.08em;color:var(--gold)}
+.chip{
+  border:3px solid var(--ink);background:var(--paper);color:var(--ink);
+  padding:5px 14px;border-radius:10px;font:inherit;font-size:15px;cursor:pointer;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .08s,box-shadow .08s;
+}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.chip[aria-pressed=true]{background:var(--red);color:#fff;box-shadow:1px 1px 0 var(--ink);transform:translate(2px,2px)}
+.opts{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 22px;color:#c5cdf5;font-weight:400}
+.opts label{display:flex;gap:8px;align-items:center;cursor:pointer}
+.opts input{width:18px;height:18px;accent-color:var(--red)}
+
+/* ---------- buttons ---------- */
+.btn{
+  font:400 24px "Bangers",sans-serif;letter-spacing:.06em;color:var(--ink);background:var(--paper);
+  border:3px solid var(--ink);border-radius:12px;padding:8px 24px;cursor:pointer;box-shadow:4px 4px 0 var(--ink);
+  transition:transform .08s,box-shadow .08s;
+}
+.btn:hover:not(:disabled){transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active:not(:disabled){transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+.btn.primary{background:var(--red);color:#fff;-webkit-text-stroke:.5px var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.info{margin:16px 0 0;color:#c5cdf5;font-weight:400}
+
+/* ---------- play ---------- */
+.meta{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#c5cdf5;font-size:15px;margin-bottom:8px}
+#combo{font:400 22px "Bangers",sans-serif;letter-spacing:.06em;color:var(--gold);text-shadow:2px 2px 0 var(--ink)}
+.thread{position:relative;height:14px;border:3px solid var(--ink);border-radius:8px;background:#1b2358;margin:4px 0 20px}
+.thread i{display:block;height:100%;border-radius:4px;background:repeating-linear-gradient(135deg,var(--red) 0 8px,var(--red-dark) 8px 16px);transition:width .35s}
+.thread b{position:absolute;top:-14px;font-size:24px;line-height:1;transition:left .35s;transform:translateX(-50%)}
+
+.card{
+  position:relative;background:var(--paper);color:var(--ink);border:4px solid var(--ink);border-radius:6px;
+  padding:26px 22px 22px;box-shadow:10px 10px 0 var(--red);
+}
+.card::before{ /* comic panel caption tab */
+  content:attr(data-tag);position:absolute;top:-4px;left:-4px;padding:3px 12px;background:var(--gold);color:var(--ink);
+  border:4px solid var(--ink);font:400 17px "Bangers",sans-serif;letter-spacing:.08em;transform:translateY(-100%);
+}
+.q{margin:6px 0 4px;font-size:21px;font-weight:700;line-height:1.35;white-space:pre-wrap}
+.hint{margin:0 0 16px;color:var(--mute);font-size:14px;font-weight:400}
+
+.o{
+  display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;font:inherit;font-size:17px;color:var(--ink);
+  background:#fff;border:3px solid var(--ink);border-radius:10px;padding:11px 14px;margin:0 0 12px;cursor:pointer;
+  box-shadow:4px 4px 0 var(--ink);transition:transform .08s,box-shadow .08s,background .12s;
+}
+.o:hover:not(:disabled){transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--blue)}
+.o:disabled{cursor:default}
+.o .m{
+  flex:none;width:24px;height:24px;margin-top:1px;border:3px solid var(--ink);border-radius:50%;background:#fff;
+  display:grid;place-items:center;font:700 15px/1 system-ui;color:#fff;
+}
+.o.multi .m{border-radius:6px}
+.o.sel{background:var(--blue-soft);border-color:var(--blue);box-shadow:4px 4px 0 var(--blue)}
+.o.sel .m{background:var(--blue);border-color:var(--blue)}
+.o.sel .m::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.o.multi.sel .m::after{border-radius:2px}
+.o.ok{background:var(--ok-bg);border-color:var(--ok);box-shadow:4px 4px 0 var(--ok)}
+.o.ok .m{background:var(--ok);border-color:var(--ok)}
+.o.ok .m::after{content:"✓";width:auto;height:auto;background:none;border-radius:0}
+.o.miss{background:#fff;border:3px dashed var(--ok)}
+.o.miss .m{border-color:var(--ok);color:var(--ok)}
+.o.miss .m::after{content:"✓";width:auto;height:auto;background:none;border-radius:0}
+.o.bad{background:var(--bad-bg);border-color:var(--bad);box-shadow:4px 4px 0 var(--bad)}
+.o.bad .m{background:var(--bad);border-color:var(--bad)}
+.o.bad .m::after{content:"✗";width:auto;height:auto;background:none;border-radius:0}
+.o.shake{animation:shake .4s}
+@keyframes shake{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+.fb{margin:14px 0 0;padding:12px 14px;border:3px solid var(--ink);border-radius:8px;font-size:16px}
+.fb.ok{background:var(--ok-bg)} .fb.bad{background:var(--bad-bg)}
+.fb strong{display:block;font:400 24px "Bangers",sans-serif;letter-spacing:.06em}
+.fb.ok strong{color:var(--ok)} .fb.bad strong{color:var(--bad)}
+.fb span{font-weight:400}
+.act{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+
+/* ---------- POW burst ---------- */
+#pop{
+  position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;z-index:5;
+  font:400 clamp(70px,22vw,150px) "Bangers",sans-serif;letter-spacing:.04em;color:var(--gold);
+  -webkit-text-stroke:4px var(--ink);paint-order:stroke fill;text-shadow:8px 8px 0 var(--red);
+  opacity:0;
+}
+#pop.bad{color:#fff;text-shadow:8px 8px 0 var(--bad)}
+#pop.go{animation:pow .7s ease-out}
+@keyframes pow{
+  0%{opacity:0;transform:scale(.3) rotate(-14deg)}
+  25%{opacity:1;transform:scale(1.15) rotate(-6deg)}
+  70%{opacity:1;transform:scale(1) rotate(-6deg)}
+  100%{opacity:0;transform:scale(1.25) rotate(-6deg)}
+}
+
+/* ---------- results ---------- */
+.rank{margin:0;font:400 clamp(36px,8vw,56px)/1 "Bangers",sans-serif;letter-spacing:.05em;color:var(--red);-webkit-text-stroke:1.5px var(--ink)}
+.score{margin:4px 0 6px;font:400 clamp(70px,16vw,110px)/1 "Bangers",sans-serif;color:var(--ink);letter-spacing:.03em}
+.wl{margin:16px 0 0;padding:0;list-style:none}
+.wl li{padding:12px 0;border-top:3px dashed #c9c9d6;font-size:16px;white-space:pre-wrap}
+.wl small{display:block;margin-top:4px;color:var(--ok);font-weight:700}
+.hide{display:none}
+
+:focus-visible{outline:4px solid var(--gold);outline-offset:3px}
+
+@media (max-width:520px){
+  .card{padding:22px 14px 16px;box-shadow:7px 7px 0 var(--red)}
+  .q{font-size:19px}
+  .btn{font-size:21px;padding:7px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+  .o.shake,#pop.go{animation:none!important}
+}

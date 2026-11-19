@@ -1,7 +1,7 @@
 # AWS Academy Quiz
 
 A small, dependency-free quiz site for practicing AWS Academy knowledge checks before an exam.
-One HTML file, no build step, works offline.
+Plain HTML, CSS and JavaScript with no build step and no dependencies. Works offline (only the fonts load from Google Fonts).
 
 **Live:** https://astmirzhan.github.io/aws-academy-quiz/
 
@@ -16,7 +16,16 @@ One HTML file, no build step, works offline.
 - Optional shuffling of questions and answers.
 - Progress is saved in the browser (`localStorage`). Nothing is sent anywhere.
 - Keyboard: `1`-`9` select an option, `Enter` checks / goes to the next question.
-- Light and dark theme follow the system setting.
+- Spider-Man inspired comic look: night-city palette, halftone dots, a web in the corner, POW/OOPS bursts, answer combos and a rank on the results screen. Animations respect `prefers-reduced-motion`.
+
+## Project structure
+
+```
+index.html        markup
+css/style.css     theme and layout
+js/questions.js   module list (MODS) and the question bank (QUESTIONS)
+js/app.js         quiz logic, progress storage, screens
+```
 
 ## Run locally
 
@@ -24,13 +33,13 @@ Open `index.html` in a browser. That's it.
 
 ## Add or edit questions
 
-Questions live in the `Q` array at the top of the `<script>` block in `index.html`:
+Questions live in the `QUESTIONS` array in `js/questions.js`:
 
 ```js
 {m:6, q:"Which service is serverless compute?", o:["EC2","Lambda","VPC"], a:[1], n:"Short explanation"}
 ```
 
-- `m` module id (see the `MODS` list), `q` question, `o` options,
+- `m` module id (see the `MODS` list in the same file), `q` question, `o` options,
 - `a` indexes of the correct options (more than one makes it a multi-select),
 - `n` optional explanation.
 
@@ -39,3 +48,4 @@ Questions live in the `Q` array at the top of the `<script>` block in `index.htm
 This is an unofficial study aid. It is not affiliated with or endorsed by Amazon Web Services.
 Correct answers were worked out from AWS knowledge, not taken from an official answer key, so a few
 may be wrong. Questions with some doubt say so in their explanation. Always verify against the course material.
+The visual style is an homage only: no Marvel logos, characters or artwork are used.
