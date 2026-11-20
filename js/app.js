@@ -17,7 +17,7 @@ const state = {
 };
 
 // ---------- helpers ----------
-const questionKey = (q) => q.m + ':' + q.q.slice(0, 60);
+const questionKey = (q) => q.m + ':' + q.q.slice(0, 60) + (q.k || ''); // q.k separates repeated questions
 const moduleName = (m) => (MODS.find((x) => x[0] === m) || [m, 'Module ' + m])[1];
 const isCorrect = (q, sel) => q.a.length === sel.size && q.a.every((i) => sel.has(i));
 
