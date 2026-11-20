@@ -7,8 +7,8 @@ Plain HTML, CSS and JavaScript with no build step and no dependencies. Works off
 
 ## Features
 
-- 137 questions across two courses:
-  - **Cloud Foundations** (modules 1-4 and 6-10): cloud basics, pricing, global infrastructure, security, compute, storage, databases, architecting, auto scaling and monitoring.
+- 159 questions across two courses:
+  - **Cloud Foundations** (modules 1-10): cloud basics, pricing, global infrastructure, security, networking and content delivery, compute, storage, databases, architecting, auto scaling and monitoring.
   - **Developer course**: SDLC and SDKs, S3, IAM, DynamoDB, API Gateway, Lambda and X-Ray.
 - Single-answer and multi-answer ("Choose two/three") questions.
 - Instant feedback: correct answers in green, mistakes in red, with a short explanation.
