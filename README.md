@@ -1,9 +1,28 @@
+<div align="center">
+
+<img src="docs/screenshot.jpg" alt="AWS Academy Quiz start screen: module filters for Cloud Foundations and the Developer course, shuffle options and a Start quiz button" width="100%" />
+
 # AWS Academy Quiz
 
-A small, dependency-free quiz site for practicing AWS Academy knowledge checks before an exam.
-Plain HTML, CSS and JavaScript with no build step and no dependencies. Works offline (only the fonts load from Google Fonts).
+**160 practice questions for the AWS Academy Cloud Foundations and Developer course knowledge checks, with instant feedback and a "My mistakes" mode.**
 
-**Live:** https://astmirzhan.github.io/aws-academy-quiz/
+<p align="center">
+  <a href="https://astmirzhan.github.io/aws-academy-quiz/"><img src="https://img.shields.io/badge/▶_Open_the_quiz-GitHub_Pages-E62429?style=for-the-badge&labelColor=0B1033" alt="Open the quiz" /></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Questions-160-FFC72C?style=for-the-badge&labelColor=0B1033" alt="160 questions" />
+  <img src="https://img.shields.io/badge/HTML_·_CSS_·_JS-no_build-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="Plain HTML, CSS and JavaScript" />
+  <img src="https://img.shields.io/badge/Dependencies-0-2EA44F?style=for-the-badge" alt="No dependencies" />
+  <img src="https://img.shields.io/badge/AWS-Academy-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white" alt="AWS Academy" />
+</p>
+
+</div>
+
+---
+
+A small, dependency-free quiz site for practicing AWS Academy knowledge checks before an exam.
+Plain HTML, CSS and JavaScript with no build step. Works offline (only the fonts load from Google Fonts).
 
 ## Features
 
